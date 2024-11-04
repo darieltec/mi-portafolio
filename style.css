@@ -1,0 +1,443 @@
+/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
+*/
+
+/* Variables de colores */
+:root {
+    --color-primary: #2A7AE4;
+    --color-secondary: #464646;
+    --color-background: #F5F5F5;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --font-family: 'Raleway', sans-serif;
+    --container-width: 1136px;
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-small);
+}
+
+/* Header y Navegación */
+.header {
+    background-color: var(--color-white);
+    padding: var(--spacing-small) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 42px;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-secondary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav__list {
+    display: flex;
+    gap: var(--spacing-small);
+    list-style: none;
+}
+
+.nav__list a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__list a:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--spacing-large) 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-large);
+}
+
+.hero__content {
+    flex: 1;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-small);
+    color: var(--color-black);
+}
+
+.hero__text {
+    margin-bottom: var(--spacing-medium);
+}
+
+.hero__image {
+    width: 368px;
+    height: 368px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-medium);
+    list-style: none;
+}
+
+.social-link {
+    color: var(--color-black);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-link::after {
+    content: "↗"; /* Flecha diagonal hacia la derecha */
+    margin-left: 5px; /* Ajusta el espacio entre la flecha y el texto */
+}
+
+/* Sobre mi Section */
+.sobre-mi {
+    background-color: var(--color-white);
+    padding: var(--spacing-large) 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-medium);
+}
+
+.signature {
+    margin-top: var(--spacing-medium);
+    height: 52px;
+}
+
+/* Skills & Hobbies Sections */
+.skills,
+.hobbies {
+    padding: var(--spacing-large) 0;
+}
+
+.skills__list,
+.hobbies__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+    gap: var(--spacing-medium);
+    list-style: none;
+}
+
+.skills__item,
+.hobbies__item {
+    background-color: var(--color-white);
+    padding: var(--spacing-medium);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.skills__item img,
+.hobbies__item img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Formacion Section */
+.formacion {
+    background-color: var(--color-white);
+    padding: var(--spacing-large) 0;
+}
+
+.formacion__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-medium);
+    list-style: none;
+}
+
+.formacion__img-container {
+    background-color: var(--color-background);
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formacion__img-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.formacion__item h3 {
+    font-size: 1.25rem;
+    margin: var(--spacing-small) 0;
+}
+
+/* Proyectos Section */
+.proyectos {
+    padding: var(--spacing-large) 0;
+}
+
+.proyecto {
+    display: flex;
+    gap: var(--spacing-medium);
+    margin-bottom: var(--spacing-large);
+}
+
+.proyecto--reverse {
+    flex-direction: row-reverse;
+}
+
+.proyecto__img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.proyecto__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proyecto__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.proyecto__description {
+    margin-bottom: var(--spacing-medium);
+}
+
+.proyecto__buttons {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid var(--color-primary);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contacto Section */
+.contacto {
+    background-color: var(--color-white);
+    padding: var(--spacing-large) 0;
+}
+
+.contacto__content {
+    display: flex;
+    gap: var(--spacing-large);
+    align-items: center;
+}
+
+.contacto__image {
+    width: 40%;
+}
+
+.contacto__form-container {
+    flex: 1;
+}
+
+.contacto__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+}
+
+.form__group {
+    position: relative;
+}
+
+.form__group input,
+.form__group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid var(--color-secondary);
+    background: transparent;
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form__group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form__group label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    transition: all 0.3s ease;
+    color: var(--color-secondary);
+    pointer-events: none;
+}
+
+.form__group input:focus ~ label,
+.form__group textarea:focus ~ label,
+.form__group input:valid ~ label,
+.form__group textarea:valid ~ label {
+    top: -0.5rem;
+    left: 0;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-white);
+    padding: var(--spacing-medium) 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero__image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .proyecto {
+        flex-direction: column;
+    }
+
+    .proyecto--reverse {
+        flex-direction: column;
+    }
+
+    .proyecto__img {
+        width: 100%;
+    }
+
+    .contacto__content {
+        flex-direction: column;
+    }
+
+    .contacto__image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav__list {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--color-white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .nav__list.active {
+        display: flex;
+    }
+
+    .nav__list li {
+        margin: 0.5rem 0;
+    }
+
+    .skills__list,
+    .hobbies__list,
+    .formacion__list {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto__buttons {
+        flex-direction: column;
+    }
+}
